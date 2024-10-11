@@ -1,0 +1,17 @@
+<?php if ($block->getProduct() && $block->getCurrencyCode()): ?>
+<script type="text/javascript" src="https://js.ventipay.com/widgets/ecommerce/product/" defer></script>
+<div id="_ventipay_wdgt_<?= $block->getProduct()->getId(); ?>"></div>
+<script type="text/javascript" defer>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof window.VentiPayWidget === 'function') {
+      window.VentiPayWidget({
+        cartCurrency: '<?= $block->getCurrencyCode(); ?>',
+        element: '#_ventipay_wdgt_<?= $block->getProduct()->getId(); ?>',
+        language: 'es-CL',
+        priceMin: <?= $block->getProduct()->getFinalPrice() > 0 ? $block->getProduct()->getFinalPrice() : 0; ?>,
+      });
+    }
+  });
+</script>
+<?php endif; ?>
+</div>
