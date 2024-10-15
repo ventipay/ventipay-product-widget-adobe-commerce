@@ -9,6 +9,7 @@
         element: '#_ventipay_wdgt_<?= $block->getProduct()->getId(); ?>',
         language: 'es-CL',
         priceMin: <?= $block->getProduct()->getFinalPrice() > 0 ? $block->getProduct()->getFinalPrice() : 0; ?>,
+        source: 'adobe-commerce',
       });
     }
   });
