@@ -10,6 +10,7 @@
         language: 'es-CL',
         priceMin: <?= $block->getProduct()->getFinalPrice() > 0 ? $block->getProduct()->getFinalPrice() : 0; ?>,
         source: 'adobe-commerce',
+        removeAnchorLogo: true,
       });
     }
   });
